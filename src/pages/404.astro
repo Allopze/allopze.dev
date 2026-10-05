@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="Página no encontrada — Allopze" description="Esta página no está disponible.">
+  <Nav />
+  <main id="main-content" class="site-container not-found" tabindex="-1">
+    <p class="eyebrow">404 / Página no encontrada</p>
+    <h1 class="display-md">Esta página no existe.</h1>
+    <a class="back-link" href="/">← Volver al inicio</a>
+  </main>
+  <Footer />
+</Base>

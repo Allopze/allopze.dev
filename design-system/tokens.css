@@ -1,0 +1,39 @@
+/* allopze — tokens (generado desde tokens.json) */
+:root {
+  /* Color */
+  --surface: #111110;
+  --surface-raised: #1a1a18;
+  --line: #2e2d2a;
+  --line-strong: #6b6a64;
+  --flow-line: #45443f;
+  --ink: #ebeae4;
+  --ink-soft: #c9c7bf;
+  --ink-muted: #a3a198;
+  --accent: #9be3c2;
+  --on-accent: #111110;
+  --focus-ring: var(--accent);
+  /* Tipografía */
+  --font-display: "Newsreader", Georgia, serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+  /* Radius */
+  --radius-0: 0;
+  --radius-pill: 999px;
+  /* Layout */
+  --container-max: 1280px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --section-gap: clamp(64px, 9vw, 128px);
+  --measure: 580px;
+  --hairline: 1px;
+}

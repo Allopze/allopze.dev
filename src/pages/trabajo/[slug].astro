@@ -1,0 +1,82 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import ContactBlock from '../../components/ContactBlock.astro';
+import Footer from '../../components/Footer.astro';
+import { projects } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const hasContent = (value: string) => value !== 'TODO';
+const kind = project.type.toUpperCase();
+const title = `${project.title} — Allopze`;
+---
+
+<Base title={title}>
+  <Nav />
+  <main id="main-content" class="site-container case-page" tabindex="-1">
+    <header class="case-intro">
+      <p class="eyebrow case-intro__eyebrow">{kind} · {project.client}</p>
+      <h1 class="display-md case-intro__title">{project.title}</h1>
+      {hasContent(project.summary) && <p class="lead case-intro__summary">{project.summary}</p>}
+    </header>
+
+    <dl class="case-facts" aria-label="Ficha del proyecto">
+      <div class="case-facts__row"><dt>Cliente</dt><dd>{project.client}</dd></div>
+      <div class="case-facts__row"><dt>Tipo</dt><dd>{project.type}</dd></div>
+      {hasContent(project.year) && (
+        <div class="case-facts__row"><dt>Año</dt><dd>{project.year}</dd></div>
+      )}
+      <div class="case-facts__row"><dt>Estado</dt><dd>{project.status}</dd></div>
+      {project.url && (
+        <div class="case-facts__row">
+          <dt>Enlace</dt>
+          <dd>
+            <a class="case-external" href={project.url} target="_blank" rel="noopener noreferrer">↗ Visitar sitio</a>
+          </dd>
+        </div>
+      )}
+    </dl>
+
+    {project.highlights.length > 0 && (
+      <section class="case-highlights" aria-labelledby="case-highlights-title">
+        <h2 class="display-md case-highlights__title" id="case-highlights-title">Qué incluye</h2>
+        <ul class="case-highlights__list">
+          {project.highlights.map((highlight, index) => (
+            <li>
+              <span class="meta case-highlights__number">{String(index + 1).padStart(2, '0')}</span>
+              <p>{highlight}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {project.images.length > 0 && (
+      <div class="case-gallery">
+        {project.images.map((image) => (
+          <figure class="case-figure">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={image.src.width}
+              height={image.src.height}
+            />
+            {image.caption && <figcaption>{image.caption}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    )}
+
+    <a class="back-link" href="/#trabajo">← Todos los trabajos</a>
+  </main>
+  <ContactBlock />
+  <Footer />
+</Base>

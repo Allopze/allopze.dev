@@ -1,0 +1,36 @@
+---
+import SectionHeader from './SectionHeader.astro';
+
+const services = [
+  {
+    number: '01',
+    title: 'Sitios web',
+    description: 'Rápidos, propios y sin plugins que se rompan.',
+  },
+  {
+    number: '02',
+    title: 'Sistemas a medida',
+    description:
+      'Plataformas internas, cotizadores y flujos de aprobación que reemplazan el Excel y los correos de ida y vuelta.',
+  },
+  {
+    number: '03',
+    title: 'Mantención',
+    description:
+      'Hosting, dominio, respaldos y cambios. Cuando algo falla, hablas con quien lo construyó.',
+  },
+];
+---
+
+<section id="servicios" class="site-container section-block" aria-labelledby="services-title">
+  <SectionHeader number="02" label="Servicios" title="Qué hago" id="services-title" />
+  <ul class="services-grid">
+    {services.map((service) => (
+      <li class="service-item">
+        <p class="service-item__number">{service.number}</p>
+        <h3>{service.title}</h3>
+        <p class="service-item__description">{service.description}</p>
+      </li>
+    ))}
+  </ul>
+</section>

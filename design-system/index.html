@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>allopze — Design system</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components/bundle.css">
+<style>
+.cat { padding-top: var(--space-16); }
+.cat__head { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-8); align-items: baseline; margin-bottom: var(--space-6); }
+.cat__head .az-eyebrow { flex: 0 0 100%; }
+.cat__title { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 34px; line-height: 1.15; }
+.cat__sum { flex: 1 1 360px; margin: 0; color: var(--ink-muted); }
+.cat__links { margin: 0; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-muted); }
+.cat__links a { display: inline-flex; align-items: center; min-height: 44px; }
+code { font-family: var(--font-mono); font-size: 0.875em; color: var(--ink); }
+.cat__stage { border: 1px solid var(--line); overflow: hidden; }
+.palette { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-6) var(--space-8); }
+.sw { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 0 var(--space-3); align-items: center; }
+.sw__chip { grid-row: span 2; width: 40px; height: 40px; border: 1px solid var(--line-strong); }
+.sw__name { font-family: var(--font-mono); font-size: 13px; }
+.sw__val { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); }
+.types { display: grid; gap: var(--space-6); }
+.types p { margin: 0; }
+</style>
+</head>
+<body>
+<header class="az-wrap">
+<div class="az-nav">
+<a class="az-wordmark" href="#">allopze</a>
+<p class="az-eyebrow">Design system · Nocturno editorial</p>
+</div>
+</header>
+<main class="az-wrap" style="padding-bottom: var(--space-24);">
+<section style="padding-top: var(--space-12);">
+<h1 class="az-h1" style="margin-top: 0;">El sistema de <em class="az-em">allopze.dev.</em></h1>
+<p class="az-lead">Un fondo oscuro, un acento, líneas en vez de cajas. Serif para decir, sans para explicar, mono para rotular. Guía completa en README.md.</p>
+</section>
+<section class="cat">
+<p class="az-eyebrow" style="margin-bottom: var(--space-4);">Color</p>
+<ul class="palette"><li class="sw"><span class="sw__chip" style="background: var(--surface);"></span><span class="sw__name">surface</span><span class="sw__val">#111110</span></li><li class="sw"><span class="sw__chip" style="background: var(--surface-raised);"></span><span class="sw__name">surface-raised</span><span class="sw__val">#1a1a18</span></li><li class="sw"><span class="sw__chip" style="background: var(--line);"></span><span class="sw__name">line</span><span class="sw__val">#2e2d2a</span></li><li class="sw"><span class="sw__chip" style="background: var(--line-strong);"></span><span class="sw__name">line-strong</span><span class="sw__val">#6b6a64</span></li><li class="sw"><span class="sw__chip" style="background: var(--flow-line);"></span><span class="sw__name">flow-line</span><span class="sw__val">#45443f</span></li><li class="sw"><span class="sw__chip" style="background: var(--ink);"></span><span class="sw__name">ink</span><span class="sw__val">#ebeae4</span></li><li class="sw"><span class="sw__chip" style="background: var(--ink-soft);"></span><span class="sw__name">ink-soft</span><span class="sw__val">#c9c7bf</span></li><li class="sw"><span class="sw__chip" style="background: var(--ink-muted);"></span><span class="sw__name">ink-muted</span><span class="sw__val">#a3a198</span></li><li class="sw"><span class="sw__chip" style="background: var(--accent);"></span><span class="sw__name">accent</span><span class="sw__val">#9be3c2</span></li><li class="sw"><span class="sw__chip" style="background: var(--on-accent);"></span><span class="sw__name">on-accent</span><span class="sw__val">#111110</span></li><li class="sw"><span class="sw__chip" style="background: var(--focus-ring);"></span><span class="sw__name">focus-ring</span><span class="sw__val">{accent}</span></li></ul>
+</section>
+<section class="cat">
+<p class="az-eyebrow" style="margin-bottom: var(--space-4);">Tipografía</p>
+<div class="types">
+<p style="font-family: var(--font-display); font-size: clamp(36px, 4.4vw, 56px); line-height: 1.05;">Newsreader — titulares <em class="az-em">y énfasis.</em></p>
+<p style="font-size: 18px; color: var(--ink-soft);">Geist — texto corriente, bajadas y botones.</p>
+<p style="font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent);">Geist Mono — rótulos y metadatos</p>
+</div>
+</section>
+
+<section class="cat" id="wordmark">
+<div class="cat__head">
+<p class="az-eyebrow">01 / Marca</p>
+<h2 class="cat__title">Wordmark</h2>
+<p class="cat__sum">La marca es la palabra "allopze" en Newsreader cursiva, minúsculas, color <code>ink</code>; no existe logo gráfico.</p>
+<p class="cat__links"><a href="components/Wordmark/preview.html">Abrir ejemplo ↗</a> · <a href="components/Wordmark/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<div class="az-demo">
+<a class="az-wordmark" href="#">allopze</a>
+</div>
+</div>
+</section>
+<section class="cat" id="button">
+<div class="cat__head">
+<p class="az-eyebrow">02 / Acciones</p>
+<h2 class="cat__title">Button</h2>
+<p class="cat__sum">Píldora de 48px de alto, la única forma redondeada del sistema.</p>
+<p class="cat__links"><a href="components/Button/preview.html">Abrir ejemplo ↗</a> · <a href="components/Button/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<div class="az-demo">
+<div class="az-actions">
+<a class="az-btn az-btn--primary" href="#">Escríbeme</a>
+<a class="az-btn az-btn--ghost" href="#">Ver trabajo</a>
+<a class="az-btn az-btn--primary" href="#">Escribir por correo →</a>
+<a class="az-btn az-btn--ghost" href="#">WhatsApp →</a>
+</div>
+</div>
+</div>
+</section>
+<section class="cat" id="nav">
+<div class="cat__head">
+<p class="az-eyebrow">03 / Navegación</p>
+<h2 class="cat__title">Nav</h2>
+<p class="cat__sum">Barra superior: marca a la izquierda, cuatro enlaces mono a la derecha; sin fondo, sin borde, no fija.</p>
+<p class="cat__links"><a href="components/Nav/preview.html">Abrir ejemplo ↗</a> · <a href="components/Nav/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<header class="az-wrap">
+<div class="az-nav">
+<a class="az-wordmark" href="#">allopze</a>
+<nav aria-label="Principal">
+<ul class="az-nav__links">
+<li><a class="az-nav__link" href="#" aria-current="page">Trabajo</a></li>
+<li><a class="az-nav__link" href="#">Servicios</a></li>
+<li><a class="az-nav__link" href="#">Proceso</a></li>
+<li><a class="az-nav__link" href="#">Contacto</a></li>
+</ul>
+</nav>
+</div>
+</header>
+</div>
+</section>
+<section class="cat" id="hero">
+<div class="cat__head">
+<p class="az-eyebrow">04 / Secciones</p>
+<h2 class="cat__title">Hero</h2>
+<p class="cat__sum">Apertura de la página: rótulo, H1 serif con cierre en cursiva <code>accent</code>, bajada y dos botones, con el campo de líneas al costado.</p>
+<p class="cat__links"><a href="components/Hero/preview.html">Abrir ejemplo ↗</a> · <a href="components/Hero/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<section class="az-wrap az-hero">
+<div class="az-hero__text">
+<p class="az-eyebrow">Webs y sistemas · Chile</p>
+<p class="az-h1">Construyo las webs y los sistemas que tu negocio usa <em class="az-em">todos los días.</em></p>
+<p class="az-lead" style="margin-bottom: 36px;">Soy Alejandro. Diseño y programo sitios web y sistemas a medida para empresas y profesionales, desde la primera conversación hasta que están funcionando.</p>
+<div class="az-actions">
+<a class="az-btn az-btn--primary" href="#">Escríbeme</a>
+<a class="az-btn az-btn--ghost" href="#">Ver trabajo</a>
+</div>
+</div>
+<div class="az-hero__art">
+<svg class="az-flow" viewBox="0 0 520 560" aria-hidden="true">
+<path data-flow="base" class="az-flow__base" d=""></path>
+<path data-flow="accent" class="az-flow__accent" d=""></path>
+</svg>
+</div>
+</section>
+</div>
+</section>
+<section class="cat" id="referralstrip">
+<div class="cat__head">
+<p class="az-eyebrow">05 / Navegación</p>
+<h2 class="cat__title">ReferralStrip</h2>
+<p class="cat__sum">Franja de una línea bajo el hero que le habla a quien llegó desde el footer "Hecho por Allopze" de un sitio cliente.</p>
+<p class="cat__links"><a href="components/ReferralStrip/preview.html">Abrir ejemplo ↗</a> · <a href="components/ReferralStrip/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<div class="az-referral" style="margin-top: 16px;">
+<div class="az-wrap az-referral__inner">
+<p class="az-referral__text"><span class="az-referral__mark" aria-hidden="true">↳</span>¿Llegaste desde el sitio de un cliente? Ese sitio también lo hice yo.</p>
+<a class="az-link-mono" href="#">Ver otros trabajos →</a>
+</div>
+</div>
+</div>
+</section>
+<section class="cat" id="sectionheader">
+<div class="cat__head">
+<p class="az-eyebrow">06 / Contenido</p>
+<h2 class="cat__title">SectionHeader</h2>
+<p class="cat__sum">Rótulo numerado en mono <code>accent</code> sobre un H2 serif; abre cada sección.</p>
+<p class="cat__links"><a href="components/SectionHeader/preview.html">Abrir ejemplo ↗</a> · <a href="components/SectionHeader/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<div class="az-demo">
+<p class="az-eyebrow" style="margin-bottom: 16px;">01 / Trabajo</p>
+<h2 class="az-h2" style="margin-bottom: 0;">Trabajo seleccionado</h2>
+</div>
+</div>
+</section>
+<section class="cat" id="workrow">
+<div class="cat__head">
+<p class="az-eyebrow">07 / Contenido</p>
+<h2 class="cat__title">WorkRow</h2>
+<p class="cat__sum">Una fila del índice de trabajos: número, título serif, cliente y tipo; no es una tarjeta.</p>
+<p class="cat__links"><a href="components/WorkRow/preview.html">Abrir ejemplo ↗</a> · <a href="components/WorkRow/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<div class="az-wrap" style="padding-block: 24px;">
+<ul class="az-worklist">
+<li class="az-work"><span class="az-work__n">01</span><a class="az-work__title" href="#">Plataforma interna: solicitudes, bodega e inspecciones</a><span class="az-work__client">Chome LTDA</span><span class="az-work__type">Sistema</span></li>
+<li class="az-work"><span class="az-work__n">02</span><a class="az-work__title" href="#">Cotizador automático desde correo y WhatsApp</a><span class="az-work__client">Puertas Neltume</span><span class="az-work__type">Sistema</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section class="cat" id="serviceitem">
+<div class="cat__head">
+<p class="az-eyebrow">08 / Contenido</p>
+<h2 class="cat__title">ServiceItem</h2>
+<p class="cat__sum">Un servicio: número mono <code>accent</code>, título serif y una frase en <code>ink-muted</code>; sin borde ni fondo.</p>
+<p class="cat__links"><a href="components/ServiceItem/preview.html">Abrir ejemplo ↗</a> · <a href="components/ServiceItem/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<div class="az-wrap" style="padding-block: 32px;">
+<div class="az-services">
+<div><p class="az-service__n">01</p><h3 class="az-service__title">Sitios web</h3><p class="az-service__text">Rápidos, propios y sin plugins que se rompan.</p></div>
+<div><p class="az-service__n">02</p><h3 class="az-service__title">Sistemas a medida</h3><p class="az-service__text">Plataformas internas, cotizadores y flujos de aprobación que reemplazan el Excel y los correos de ida y vuelta.</p></div>
+<div><p class="az-service__n">03</p><h3 class="az-service__title">Mantención</h3><p class="az-service__text">Hosting, dominio, respaldos y cambios. Cuando algo falla, hablas con quien lo construyó.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section class="cat" id="processstep">
+<div class="cat__head">
+<p class="az-eyebrow">09 / Contenido</p>
+<h2 class="cat__title">ProcessStep</h2>
+<p class="cat__sum">Un paso del proceso de trabajo: hairline superior, "Paso 01" en mono <code>accent</code>, título sans 500 y una frase.</p>
+<p class="cat__links"><a href="components/ProcessStep/preview.html">Abrir ejemplo ↗</a> · <a href="components/ProcessStep/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<div class="az-wrap" style="padding-block: 32px;">
+<ol class="az-steps">
+<li class="az-step"><p class="az-step__n">Paso 01</p><h3 class="az-step__title">Conversación</h3><p class="az-step__text">Me cuentas qué necesitas y qué está fallando.</p></li>
+<li class="az-step"><p class="az-step__n">Paso 02</p><h3 class="az-step__title">Propuesta</h3><p class="az-step__text">Alcance, plazo y costo, por escrito.</p></li>
+<li class="az-step"><p class="az-step__n">Paso 03</p><h3 class="az-step__title">Construcción</h3><p class="az-step__text">Avances que puedes ver y probar.</p></li>
+<li class="az-step"><p class="az-step__n">Paso 04</p><h3 class="az-step__title">Entrega</h3><p class="az-step__text">El sistema en uso, y yo cerca si algo falla.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="cat" id="contactblock">
+<div class="cat__head">
+<p class="az-eyebrow">10 / Secciones</p>
+<h2 class="cat__title">ContactBlock</h2>
+<p class="cat__sum">Cierre de la página: una pregunta enorme en serif con "Escríbeme." en cursiva <code>accent</code>, y dos botones.</p>
+<p class="cat__links"><a href="components/ContactBlock/preview.html">Abrir ejemplo ↗</a> · <a href="components/ContactBlock/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<section class="az-wrap" style="padding-block: 56px;">
+<h2 class="az-display-xl">¿Tienes algo que ordenar? <em class="az-em">Escríbeme.</em></h2>
+<div class="az-actions">
+<a class="az-btn az-btn--primary" href="#">Escribir por correo →</a>
+<a class="az-btn az-btn--ghost" href="#">WhatsApp →</a>
+</div>
+</section>
+</div>
+</section>
+<section class="cat" id="flowfield">
+<div class="cat__head">
+<p class="az-eyebrow">11 / Marca</p>
+<h2 class="cat__title">FlowField</h2>
+<p class="cat__sum">El campo de líneas: el único elemento gráfico del sistema, cientos de trazos cortos que siguen un campo de ángulos, con unas pocas hebras largas en <code>accent</code>.</p>
+<p class="cat__links"><a href="components/FlowField/preview.html">Abrir ejemplo ↗</a> · <a href="components/FlowField/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<div class="az-demo" style="max-width: 400px;">
+<svg class="az-flow" viewBox="0 0 520 560" aria-hidden="true">
+<path data-flow="base" class="az-flow__base" d=""></path>
+<path data-flow="accent" class="az-flow__accent" d=""></path>
+</svg>
+</div>
+</div>
+</section>
+<section class="cat" id="footer">
+<div class="cat__head">
+<p class="az-eyebrow">12 / Navegación</p>
+<h2 class="cat__title">Footer</h2>
+<p class="cat__sum">Una línea mono en <code>ink-muted</code> sobre una hairline: dominio, la firma y el año.</p>
+<p class="cat__links"><a href="components/Footer/preview.html">Abrir ejemplo ↗</a> · <a href="components/Footer/README.md">Guía</a></p>
+</div>
+<div class="cat__stage">
+<footer class="az-wrap" style="padding-top: 16px;">
+<div class="az-footer">
+<span>allopze.dev</span>
+<span>Hecho por Allopze, obviamente.</span>
+<span>© 2026 · Chile</span>
+</div>
+</footer>
+</div>
+</section>
+</main>
+<script>
+function flow(seed, count, steps, len) {
+  var s = seed;
+  function r() { s = (s * 16807) % 2147483647; return s / 2147483647; }
+  var d = '';
+  for (var i = 0; i < count; i++) {
+    var x = r() * 560 - 20, y = r() * 600 - 20;
+    d += 'M' + x.toFixed(1) + ' ' + y.toFixed(1);
+    for (var k = 0; k < steps; k++) {
+      var a = Math.sin(x * 0.011) * 1.4 + Math.cos(y * 0.013) * 1.3 + Math.sin((x - y) * 0.006) * 0.8;
+      x += Math.cos(a) * len; y += Math.sin(a) * len;
+      d += 'L' + x.toFixed(1) + ' ' + y.toFixed(1);
+    }
+  }
+  return d;
+}
+var fb = flow(12345, 220, 14, 6), fa = flow(987, 14, 30, 6);
+document.querySelectorAll('[data-flow="base"]').forEach(function (p) { p.setAttribute('d', fb); });
+document.querySelectorAll('[data-flow="accent"]').forEach(function (p) { p.setAttribute('d', fa); });
+</script>
+<footer class="az-wrap"><div class="az-footer"><span>allopze.dev</span><span>Design system v1</span><span>Nocturno editorial</span></div></footer>
+</body>
+</html>

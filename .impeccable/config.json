@@ -1,0 +1,20 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "geist",
+        "createdAt": "2026-10-05T02:51:55.841Z",
+        "reason": "El stack obligatorio del encargo especifica Geist 400/500 para texto y botones."
+      },
+      {
+        "rule": "overused-font",
+        "value": "geist mono",
+        "createdAt": "2026-10-05T02:52:00.506Z",
+        "reason": "El stack obligatorio del encargo especifica Geist Mono 400 para rótulos y metadatos."
+      }
+    ]
+  }
+}

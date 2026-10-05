@@ -1,0 +1,23 @@
+---
+import SectionHeader from './SectionHeader.astro';
+
+const steps = [
+  { title: 'Conversación', description: 'Me cuentas qué necesitas y qué está fallando.' },
+  { title: 'Propuesta', description: 'Alcance, plazo y costo, por escrito.' },
+  { title: 'Construcción', description: 'Avances que puedes ver y probar.' },
+  { title: 'Entrega', description: 'El sistema en uso, y yo cerca si algo falla.' },
+];
+---
+
+<section id="proceso" class="site-container section-block" aria-labelledby="process-title">
+  <SectionHeader number="03" label="Proceso" title="Cómo trabajo" id="process-title" />
+  <ol class="process-grid">
+    {steps.map((step, index) => (
+      <li class="process-step">
+        <p class="process-step__number">Paso 0{index + 1}</p>
+        <h3>{step.title}</h3>
+        <p class="process-step__description">{step.description}</p>
+      </li>
+    ))}
+  </ol>
+</section>

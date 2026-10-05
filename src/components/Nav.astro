@@ -1,0 +1,22 @@
+---
+interface Props {
+  home?: boolean;
+}
+
+const { home = false } = Astro.props;
+const destination = (section: string) => (home ? `#${section}` : `/#${section}`);
+---
+
+<header class="site-header">
+  <div class="site-container site-nav">
+    <a class="wordmark" href="/" aria-label="Allopze, inicio">allopze</a>
+    <nav aria-label="Principal" class="site-nav__nav">
+      <ul class="site-nav__links">
+        <li><a href={destination('trabajo')}>Trabajo</a></li>
+        <li><a href={destination('servicios')}>Servicios</a></li>
+        <li><a href={destination('proceso')}>Proceso</a></li>
+        <li><a href={destination('contacto')}>Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

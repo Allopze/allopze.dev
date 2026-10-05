@@ -1,0 +1,172 @@
+@import "tailwindcss";
+@import "./site.css";
+@import "./cases.css";
+
+
+@theme {
+  --color-*: initial;
+  --color-surface: #111110;
+  --color-surface-raised: #1a1a18;
+  --color-line: #2e2d2a;
+  --color-line-strong: #6b6a64;
+  --color-flow-line: #45443f;
+  --color-ink: #ebeae4;
+  --color-ink-soft: #c9c7bf;
+  --color-ink-muted: #a3a198;
+  --color-accent: #9be3c2;
+  --color-on-accent: #111110;
+  --color-focus-ring: #9be3c2;
+
+  --font-display: "Newsreader", Georgia, serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --text-display-xl: clamp(48px, 7.5vw, 120px);
+  --text-display-xl--line-height: 0.98;
+  --text-display-xl--letter-spacing: -0.025em;
+  --text-display-lg: clamp(46px, 6.4vw, 100px);
+  --text-display-lg--line-height: 1;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-md: clamp(36px, 4.4vw, 56px);
+  --text-display-md--line-height: 1.05;
+  --text-display-md--letter-spacing: -0.015em;
+  --text-title-lg: clamp(24px, 2.6vw, 34px);
+  --text-title-lg--line-height: 1.15;
+  --text-title-md: 30px;
+  --text-title-md--line-height: 1.15;
+  --text-wordmark: 28px;
+  --text-wordmark--line-height: 1;
+  --text-wordmark--letter-spacing: -0.01em;
+  --text-lead: 18px;
+  --text-lead--line-height: 1.55;
+  --text-body: 16px;
+  --text-body--line-height: 1.55;
+  --text-heading-sm: 18px;
+  --text-heading-sm--line-height: 1.4;
+  --text-button: 16px;
+  --text-button--line-height: 20px;
+  --text-eyebrow: 13px;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.05em;
+  --text-nav: 13px;
+  --text-nav--line-height: 1.4;
+  --text-nav--letter-spacing: 0.05em;
+  --text-meta: 12px;
+  --text-meta--line-height: 1.4;
+  --text-meta--letter-spacing: 0.05em;
+  --text-index: 13px;
+  --text-index--line-height: 1.4;
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
+  --radius-pill: 999px;
+  --container-site: 1280px;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("/fonts/newsreader-latin-opsz-normal.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("/fonts/newsreader-latin-opsz-italic.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/geist-latin-wght-normal.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/geist-mono-latin-wght-normal.woff2") format("woff2-variations");
+}
+
+:root {
+  color-scheme: dark;
+  --container-max: 1280px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --section-gap: clamp(64px, 9vw, 128px);
+  --measure: 580px;
+  --hairline: 1px;
+  --focus-ring: var(--color-accent);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  font-optical-sizing: auto;
+  color: var(--color-ink);
+  background: var(--color-surface);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-surface);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--text-body);
+  line-height: var(--text-body--line-height);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+em {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.site-container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}

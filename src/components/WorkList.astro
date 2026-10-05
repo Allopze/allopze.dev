@@ -1,0 +1,16 @@
+---
+import { projects } from '../data/projects';
+---
+
+<ul class="work-list">
+  {projects.map((project) => (
+    <li class="work-row">
+      <span class="work-row__number">{project.n}</span>
+      <h3 class="work-row__title">
+        <a href={`/trabajo/${project.slug}/`}>{project.title}</a>
+      </h3>
+      <span class="work-row__client">{project.client}</span>
+      <span class="work-row__type">{project.type}</span>
+    </li>
+  ))}
+</ul>

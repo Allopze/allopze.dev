@@ -1,0 +1,14 @@
+---
+import { contact } from '../config';
+
+const emailHref = `mailto:${contact.email}`;
+const whatsappHref = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(contact.whatsappMessage)}`;
+---
+
+<section id="contacto" class="site-container contact-block" aria-labelledby="contact-title">
+  <h2 class="contact-block__title" id="contact-title">¿Tienes algo que ordenar? <em>Escríbeme.</em></h2>
+  <div class="button-row contact-block__actions">
+    <a class="button button--primary" href={emailHref}>Escribir por correo <span aria-hidden="true">→</span></a>
+    <a class="button button--secondary" href={whatsappHref} rel="noopener">WhatsApp <span aria-hidden="true">→</span></a>
+  </div>
+</section>

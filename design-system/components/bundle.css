@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Geist:wght@400;500&family=Geist+Mono:wght@400;500&display=swap");
+
+/* allopze — Nocturno editorial. Clases az-*; los valores vienen de tokens.css. */
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font-sans); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+a { color: var(--ink); }
+a:hover { color: var(--ink-muted); }
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+
+.az-wrap { max-width: var(--container-max); margin: 0 auto; padding-inline: var(--gutter); }
+.az-demo { padding: var(--space-6); }
+
+/* Marca */
+.az-wordmark { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--font-display); font-style: italic; font-size: 28px; line-height: 1; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+
+/* Rótulos */
+.az-eyebrow { margin: 0; font-family: var(--font-mono); font-size: 13px; line-height: 1.4; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); }
+.az-link-mono { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); }
+
+/* Titulares */
+.az-h1 { margin: 28px 0 32px; font-family: var(--font-display); font-weight: 400; font-size: clamp(46px, 6.4vw, 100px); line-height: 1; letter-spacing: -0.02em; }
+.az-h2 { margin: 0 0 var(--space-12); font-family: var(--font-display); font-weight: 400; font-size: clamp(36px, 4.4vw, 56px); line-height: 1.05; letter-spacing: -0.015em; }
+.az-display-xl { margin: 0 0 44px; max-width: 1100px; font-family: var(--font-display); font-weight: 400; font-size: clamp(48px, 7.5vw, 120px); line-height: 0.98; letter-spacing: -0.025em; }
+.az-em { font-style: italic; color: var(--accent); }
+.az-lead { margin: 0; max-width: var(--measure); font-size: 18px; line-height: 1.55; color: var(--ink-soft); }
+
+/* Botones */
+.az-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.az-btn { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 48px; padding: 0 var(--space-6); border: 1px solid transparent; border-radius: var(--radius-pill); font-family: var(--font-sans); font-size: 16px; font-weight: 500; line-height: 20px; text-decoration: none; cursor: pointer; transition: background-color 150ms, color 150ms, border-color 150ms; }
+.az-btn--primary { background: var(--accent); color: var(--on-accent); }
+.az-btn--primary:hover { background: var(--ink); color: var(--on-accent); }
+.az-btn--ghost { background: transparent; border-color: var(--ink); color: var(--ink); }
+.az-btn--ghost:hover { background: var(--ink); color: var(--on-accent); }
+
+/* Navegación */
+.az-nav { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-8); align-items: center; justify-content: space-between; padding-block: 20px; }
+.az-nav__links { display: flex; flex-wrap: wrap; gap: 0 var(--space-6); margin: 0; padding: 0; list-style: none; }
+.az-nav__link { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-muted); text-decoration: none; }
+.az-nav__link:hover, .az-nav__link[aria-current="page"] { color: var(--ink); }
+
+/* Hero */
+.az-hero { display: flex; flex-wrap: wrap; gap: var(--space-12) var(--space-16); align-items: center; padding-block: clamp(40px, 7vw, 96px) clamp(48px, 7vw, 96px); }
+.az-hero__text { flex: 999 1 600px; min-width: 0; }
+.az-hero__art { flex: 1 1 340px; max-width: 520px; }
+
+/* Franja de referido */
+.az-referral { border-block: 1px solid var(--line); }
+.az-referral__inner { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-6); align-items: center; justify-content: space-between; padding-block: 10px; }
+.az-referral__text { margin: 0; display: flex; gap: var(--space-3); align-items: baseline; }
+.az-referral__mark { font-family: var(--font-mono); color: var(--accent); }
+
+/* Secciones */
+.az-section { padding-top: var(--section-gap); }
+.az-section .az-eyebrow { margin-bottom: var(--space-4); }
+
+/* Índice de trabajos */
+.az-worklist { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
+.az-work { display: flex; flex-wrap: wrap; gap: 6px var(--space-8); align-items: baseline; padding-block: var(--space-6); border-top: 1px solid var(--line); }
+.az-work__n { flex: 0 0 56px; font-family: var(--font-mono); font-size: 13px; color: var(--ink-muted); }
+.az-work__title { flex: 999 1 380px; min-width: 0; font-family: var(--font-display); font-size: clamp(24px, 2.6vw, 34px); line-height: 1.15; color: var(--ink); text-decoration: none; }
+a.az-work__title:hover { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; text-decoration-color: var(--accent); }
+.az-work__client { flex: 1 1 200px; color: var(--ink-muted); }
+.az-work__type { flex: 0 0 72px; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); }
+
+/* Servicios */
+.az-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-12); }
+.az-service__n { margin: 0; font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
+.az-service__title { margin: 14px 0 var(--space-2); font-family: var(--font-display); font-weight: 400; font-size: 30px; line-height: 1.15; }
+.az-service__text { margin: 0; color: var(--ink-muted); }
+
+/* Proceso */
+.az-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-8); }
+.az-step { border-top: 1px solid var(--line); padding-top: 20px; }
+.az-step__n { margin: 0; font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
+.az-step__title { margin: 28px 0 6px; font-size: 18px; line-height: 1.4; font-weight: 500; }
+.az-step__text { margin: 0; color: var(--ink-muted); }
+
+/* Contacto */
+.az-contact { padding-block: clamp(96px, 12vw, 176px) clamp(64px, 8vw, 112px); }
+
+/* Campo de líneas */
+.az-flow { display: block; width: 100%; height: auto; }
+.az-flow__base { fill: none; stroke: var(--flow-line); stroke-width: 1px; stroke-linecap: round; stroke-linejoin: round; }
+.az-flow__accent { fill: none; stroke: var(--accent); stroke-width: 1.4px; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Footer */
+.az-footer { border-top: 1px solid var(--line); padding: 20px 0 28px; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-8); justify-content: space-between; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-muted); }
+
+@media (prefers-reduced-motion: reduce) { .az-btn { transition: none; } }

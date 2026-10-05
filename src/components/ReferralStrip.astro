@@ -1,0 +1,27 @@
+---
+import { referrals } from '../config';
+---
+
+<aside class="referral-strip" aria-label="Referencia del sitio">
+  <div class="site-container referral-strip__inner" data-referrals={JSON.stringify(referrals)}>
+    <p class="referral-strip__message">
+      <span class="referral-strip__mark" aria-hidden="true">↳</span>
+      <span id="referral-message">¿Llegaste desde el sitio de un cliente? Ese sitio también lo hice yo.</span>
+    </p>
+    <a class="referral-strip__link" href="#trabajo">Ver otros trabajos →</a>
+  </div>
+</aside>
+
+<script is:inline>
+  (() => {
+    const strip = document.querySelector('[data-referrals]');
+    const message = document.getElementById('referral-message');
+    if (!strip || !message) return;
+
+    const names = JSON.parse(strip.dataset.referrals || '{}');
+    const slug = new URLSearchParams(window.location.search).get('desde');
+    if (!slug || !Object.prototype.hasOwnProperty.call(names, slug)) return;
+
+    message.textContent = `Llegaste desde el sitio de ${names[slug]}. Ese sitio también lo hice yo.`;
+  })();
+</script>

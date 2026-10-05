@@ -1,0 +1,34 @@
+---
+import FlowField from './FlowField.astro';
+import { projects } from '../data/projects';
+
+const proofProject = projects.find((project) => project.status === 'En producción');
+---
+
+<section class="site-container hero" aria-labelledby="hero-title">
+  <div class="hero__copy">
+    <p class="eyebrow hero__eyebrow">Webs y sistemas · Chile</p>
+    <h1 class="hero__title" id="hero-title">
+      Construyo las webs y los sistemas que tu negocio usa <em>todos los días.</em>
+    </h1>
+    <p class="lead hero__lead">
+      Soy Alejandro. Diseño y programo sitios web y sistemas a medida para empresas y
+      profesionales, desde la primera conversación hasta que están funcionando.
+    </p>
+    <div class="button-row hero__actions">
+      <a class="button button--primary" href="#contacto">Escríbeme <span aria-hidden="true">→</span></a>
+      <a class="button button--secondary" href="#trabajo">Ver trabajo</a>
+    </div>
+    {proofProject && (
+      <div class="hero__proof">
+        <p class="meta hero__proof-label">En producción · {proofProject.client}</p>
+        <a class="hero__proof-link" href={`/trabajo/${proofProject.slug}/`}>
+          {proofProject.title} <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    )}
+  </div>
+  <div class="hero__art">
+    <FlowField />
+  </div>
+</section>
